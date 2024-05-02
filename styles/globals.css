@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "Agrandir";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("../fonts/AgrandirVariable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Telegraf";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("../fonts/TelegrafVariable.woff2") format("woff2");
+}
+@tailwind base;
+@layer base {
+  :root {
+    --color-accent: #6d57ff;
+    --color-secondary: #8A79FF;
+    --color-light: #f6f6f6;
+    --color-dark: #000;
+    --color-grey: #eee;
+  }
+
+  html {
+    @apply p-0 m-0 scroll-smooth w-full h-full;
+  }
+
+  html body {
+    @apply m-0 h-screen w-full bg-light text-black font-telegraf;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-agrandir font-bold;
+  }
+  h1 {
+    @apply text-5xl;
+  }
+
+  a {
+    @apply text-black;
+  }
+
+  button {
+    @apply font-telegraf font-bold;
+  }
+
+}
+@tailwind components;
+@tailwind utilities;
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: black;
+  padding: 1rem 2rem;
+  box-shadow: none;
+  font-size: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.logo-text {
+  margin-left: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  /* Increased gap */
+}
+
+.nav-links li a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+  padding: 0.5rem 0.55rem;
+}
+
+.nav-links li a:hover {
+  color: white;
+  background-color: slateblue;
+  border-radius: 30%;
+}
+
+.but2 {
+  text-decoration: none;
+  position: relative;
+  border: none;
+  font-size: 15px;
+  font-family: inherit;
+  color: #fff;
+  width: 9em;
+  height: 3em;
+  line-height: 2em;
+  text-align: center;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 300%;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+.but2:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+@keyframes ani {
+  0% {
+      background-position: 0%;
+  }
+
+  100% {
+      background-position: 400%;
+  }
+}
+
+.but2:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 35px;
+  transition: 1s;
+}
+
+.but2:hover::before {
+  filter: blur(20px);
+}
+
+.but2:active {
+  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+}
